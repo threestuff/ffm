@@ -22,8 +22,7 @@ title: ffm
 email: hello@ffm.co.uk
 description: this website was made with the use of LLM's
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://threestuff.github.io/ffm/
-" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://threestuff.github.io/ffm/" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: threestuff
 
 # Build settings
