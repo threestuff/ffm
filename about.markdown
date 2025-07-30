@@ -4,8 +4,10 @@ title: About
 permalink: /about/
 ---
 
-ffm is a written record—a journal to log your practices, activities, and exercises. Whether it's an outdoor run, a 30-minute yoga flow, or a 15-minute meditation, ffm is yours to use.
+#### ffm is a written record—a journal for your practices, activities and exercises.
 
-Pause and reflect with three simple prompts. Find freedom in your daily reflections.
+#### Whether it’s an outdoor run, a 30-minute yoga flow, or a 15-minute meditation, ffm is yours to use.
 
-ffm is a tool—a reliable way to bring structure to your daily life, however that may look for you.
+#### Pause and reflect with three simple prompts. Find solace in your daily reflections.
+
+#### ffm is a tool—a reliable way to bring structure and reflection to your daily life, however that may look for you.

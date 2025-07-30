@@ -1,9 +1,12 @@
 ---
 layout: page
 title: Journal
+permalink: /journal/
 ---
 
-# Feel free to use this as a space to journal
+### Feel free to use this space to write your daily journal entries.
+
+<p>This tool creates a dated journal entry you can copy for your own records or notes.</p>
 
 <html lang="en">
   <head>
@@ -17,7 +20,7 @@ title: Journal
         <textarea
           id="journal-input"
           class="journal-entry"
-          placeholder="I am grateful for..."
+          placeholder="I am grateful for ..."
           required
         ></textarea>
         <textarea
@@ -27,60 +30,50 @@ title: Journal
         ></textarea>
         <textarea
           class="journal-entry"
-          placeholder="I feel ... today"
+          placeholder="I feel ... "
           required
         ></textarea>
         <br>
-        <button type="submit" class="journal-submit" style="padding: 12px 24px; background-color:rgb(116, 116, 116); color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; transition: background 0.2s;">Add Entry</button>
-      </form>
-      <div id="entries-list"></div>
-    </div>
-    <script>
-      const form = document.getElementById("journal-form");
-      const textareas = form.querySelectorAll(".journal-entry");
-      const entriesList = document.getElementById("entries-list");
-
-      function formatDate(date) {
-        return date.toLocaleDateString(undefined, {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        });
-      }
-
-      function getEntryText(texts, date) {
-        return (
-          `Date: ${formatDate(date)}\n` +
-          `I am grateful for:\n${texts[0]}\n\n` +
-          `What's on your mind?:\n${texts[1]}\n\n` +
-          `I feel ... today:\n${texts[2]}`
-        );
-      }
-
-      function addEntry(texts, date) {
-        const entryDiv = document.createElement("div");
-        entryDiv.className = "journal-entry-block";
-        entryDiv.innerHTML = `
-            <p class="journal-date">${formatDate(date)}</p>
-            <div class="journal-entry">
-              <p><strong>I am grateful for:</strong><br>${texts[0].replace(
-                /\n/g,
-                "<br>"
-              )}</p>
-              <p><strong>What's on your mind?:</strong><br>${texts[1].replace(
-                /\n/g,
-                "<br>"
-              )}</p>
-              <p><strong>I feel ... today:</strong><br>${texts[2].replace(
-                /\n/g,
-                "<br>"
-              )}</p>
+          <button type="submit" class="journal-submit" style="padding: 12px 24px; background-color:rgb(116, 116, 116); color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; transition: background 0.2s;">Add Entry</button>
+              </form>
+              <div id="entries-list"></div>
             </div>
-            <button class="copy-entry-btn" type="button">Copy Entry</button>
-          `;
-        entriesList.prepend(entryDiv);
+            <script>
+              const form = document.getElementById("journal-form");
+              const textareas = form.querySelectorAll(".journal-entry");
+              const entriesList = document.getElementById("entries-list");
 
-        // Add copy functionality
+              function formatDate(date) {
+          return date.toLocaleDateString(undefined, {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          });
+              }
+
+              function getEntryText(texts, date) {
+          return (
+            `${formatDate(date)}\n` +
+            `${texts[0]}\n\n` +
+            `${texts[1]}\n\n` +
+            `${texts[2]}`
+          );
+              }
+
+              function addEntry(texts, date) {
+          const entryDiv = document.createElement("div");
+          entryDiv.className = "journal-entry-block";
+          entryDiv.innerHTML = `
+              <p class="journal-date">${formatDate(date)}</p>
+              <div class="journal-entry">
+                <p>${texts[0].replace(/\n/g, "<br>")}</p>
+                <p>${texts[1].replace(/\n/g, "<br>")}</p>
+                <p>${texts[2].replace(/\n/g, "<br>")}</p>
+              </div>
+              <button class="copy-entry-btn" type="button">Copy Entry</button>
+            `;
+          entriesList.prepend(entryDiv);
+     // Add copy functionality
         const copyBtn = entryDiv.querySelector(".copy-entry-btn");
         copyBtn.addEventListener("click", function () {
           const entryText = getEntryText(texts, date);
@@ -105,4 +98,3 @@ title: Journal
 </html>
 
 <br>
-Journaling daily is a powerful habit that can help you reflect on your thoughts, track your progress, and cultivate gratitude. By taking a few moments each day to write, you can gain clarity, reduce stress, and foster personal growth. Whether you're noting what you're grateful for or simply expressing how you feel, consistent journaling can make a meaningful difference in your well-being.
